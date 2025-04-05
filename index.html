@@ -13,9 +13,7 @@
 
 
 <body>
-    <div class="container-logo">
-        <div class="img"></div>
-        <div class="container-contatos">
+    <!--
             <div class="contatos">
                 <a class="contato" href="mailto:sevdesign7@gmail.com" target="_blank"> 
                     <div class="fa-regular fa-envelope fa-xl"></div> </a>
@@ -24,11 +22,65 @@
                 <a class="contato" href="https://wa.me/88994835808" target="_blank"> 
                     <div class="fa-brands fa-whatsapp fa-xl"></div> </a>
             </div>
-        </div>
-    </div>
-    <hr class="linha">
-    <div>
+    -->
 
-    </div>
+    <header>
+        <div class="Brand-name"><img src="imagens/banner.png" alt="Logo"></div>
+        <nav>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#services">Serviços</a>
+          <a href="#contact" class="cta-button">Orçamento</a>
+        </nav>
+    </header>
+    
+      <section class="hero">
+        <h1>Criamos Identidades Visuais Memoráveis</h1>
+        <p>Design estratégico para marcas que querem se destacar.</p>
+        <a href="#portfolio" class="cta-button">Ver Portfólio</a>
+      </section>
+    
+      <section id="services" class="services">
+        <h2>Nossos Serviços</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="icons/branding.svg" alt="Ícone Branding" class="service-icon">
+            <h3>Branding</h3>
+            <p>Criação de identidade visual completa.</p>
+          </div>
+          <!-- Repetir para outros serviços -->
+        </div>
+      </section>
+    
+      <section id="portfolio" class="portfolio">
+        <h2>Portfólio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="images/projeto1.jpg" alt="Projeto 1">
+            <div class="overlay">
+              <h3>Loja Virtual</h3>
+              <p>UI/UX Design</p>
+            </div>
+          </div>
+          <!-- Repetir para outros projetos -->
+        </div>
+      </section>
+    
+      <section id="contact" class="contact">
+        <h2>Contato</h2>
+        <form>
+          <input type="text" placeholder="Nome" required>
+          <input type="email" placeholder="E-mail" required>
+          <textarea placeholder="Mensagem" required></textarea>
+          <button type="submit" class="cta-button">Enviar</button>
+        </form>
+      </section>
+    
+      <footer>
+        <div class="social-links">
+          <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="icons/behance.svg" alt="Behance"></a>
+        </div>
+        <p>&copy; 2023 Studio Design. Todos os direitos reservados.</p>
+      </footer>
 </body>
 </html>
