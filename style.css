@@ -90,28 +90,28 @@ body{
     position: sticky;
     top: 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+    .brand-name {
+      overflow: hidden;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      justify-content: end;
+      height: 80px;
+      overflow: hidden;
+      
+      img{
+          width: 50%;
+          height: 100%;
+          background-image: url(./imagens/banner.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+      }
+    }
   }
   
-  .Brand-name {
-    overflow: hidden;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: end;
-    height: 80px;
-    overflow: hidden;
-    
-    .img{
-        width: 50%;
-        height: 100%;
-        background-image: url(./imagens/banner.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-  }
     
   nav a {
     margin-left: 1.5rem;
