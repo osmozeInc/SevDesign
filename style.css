@@ -1,3 +1,16 @@
+/* Reset para elementos HTML em iOS */
+img, h1, h2, h3, h4, h5, h6, p, a, div, span {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Forçar renderização de elementos */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, img {
+  display: block;
+}
+
 body{
     margin: 0;
     padding: 0;
