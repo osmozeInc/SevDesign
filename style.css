@@ -97,8 +97,8 @@
     color: var(--bg);
     
     .title{
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
     }
     
     .subtitle {
@@ -175,14 +175,7 @@
     }
   }
   
-  
-  
-  .service-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-  }
-  
+    
   /* Seção Portfólio */
   .portfolio {
     padding: 4rem 5%;
@@ -238,11 +231,11 @@
     padding: 4rem 5%;
     max-width: 600px;
     margin: 0 auto;
-  }
-  
-  .contact h2 {
-    text-align: center;
-    margin-bottom: 2rem;
+    
+    .title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
   }
   
   .contact form {
