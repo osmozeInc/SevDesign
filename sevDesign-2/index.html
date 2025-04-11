@@ -7,6 +7,7 @@
 </head>
 
 <link rel="stylesheet" href="style.css">
+<script src="script.js" type="module"></script>
 
 <div> <!-- Link para o Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -16,7 +17,7 @@
 </div>
 
 
-<body>
+<body class="body">
     <!--
             <div class="contatos">
                 <a class="contato" href="mailto:sevdesign7@gmail.com" target="_blank"> 
@@ -28,22 +29,25 @@
             </div>
     -->
 
-    <div class="header">
-      <div class="brand-name">
-        <img src="./imagens/banner.png" class="logo" alt="Logo">
-      </div>
-
-      <div class="nav">
-        <a href="#portfolio" class="d-sm-block d-none link">Portfólio</a>
-        <a href="#services" class="d-sm-block d-none link">Serviços</a>
-        <a href="#contact" class="button">Orçamento</a>
-      </div>
-    </div>
     
-    <section class="hero">
-      <h1 class="title">Criamos Identidades Visuais Memoráveis</h1>
-      <p class="subtitle">Design estratégico para marcas que querem se destacar.</p>
-      <a href="#portfolio" class="button">Ver Portfólio</a>
+    <section class="hero img-3">
+      <div class="header">
+        <a class="brand-name" href="index.html">
+          <img src="../imagens/banner.png" class="logo" alt="Logo">
+        </a>
+  
+        <div class="nav">
+          <a href="#portfolio" class="d-sm-block d-none link">Portfólio</a>
+          <a href="#services" class="d-sm-block d-none link">Serviços</a>
+          <a href="#contact" class="button">Orçamento</a>
+        </div>
+      </div>
+      
+      <div class="image-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
     </section>
     
     <section id="services" class="services">
@@ -85,7 +89,7 @@
           <input type="text" placeholder="Nome" required>
           <input type="email" placeholder="E-mail" required>
           <textarea placeholder="Mensagem" required></textarea>
-          <button type="submit" class="cta-button">Enviar</button>
+          <button type="submit" class="button">Enviar</button>
         </form>
       </section>
     
