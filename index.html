@@ -7,6 +7,7 @@
 </head>
 
 <link rel="stylesheet" href="style.css">
+<script src="script.js" type="module"></script>
 
 <div> <!-- Link para o Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -17,59 +18,79 @@
 
 
 <body class="body">
-    <!--
-            <div class="contatos">
-                <a class="contato" href="mailto:sevdesign7@gmail.com" target="_blank"> 
-                    <div class="fa-regular fa-envelope fa-xl"></div> </a>
-                <a class="contato" href="https://www.instagram.com/_sevdesign_/" target="_blank"> 
-                    <div class="fa-brands fa-instagram fa-xl"></div> </a>
-                <a class="contato" href="https://wa.me/88994835808" target="_blank"> 
-                    <div class="fa-brands fa-whatsapp fa-xl"></div> </a>
-            </div>
-    -->
 
-    <div class="header">
-      <div class="brand-name">
-        <img src="./imagens/banner.png" class="logo" alt="Logo">
+    
+    <section class="hero img">                  <!-- Hero Section -->
+      <div class="header">
+        <a class="brand-name" href="index.html">
+          <img src="./imagens/banner.png" class="logo" alt="Logo">
+        </a>
+  
+        <div class="nav-large d-md-block d-none">
+          <a href="#portfolio" class=" link">Portfólio</a>
+          <a href="#services" class=" link">Serviços</a>
+        </div>
+        
+        <div class="link-orcamento">
+          <a href="#contact" class="button">Orçamento</a>
+        </div>
       </div>
+      
+      <div class="image-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </section>
 
-      <div class="nav">
-        <a href="#portfolio" class="d-sm-block d-none link">Portfólio</a>
-        <a href="#services" class="d-sm-block d-none link">Serviços</a>
-        <a href="#contact" class="button">Orçamento</a>
-      </div>
+    <div class="side-menu-container"><div class="side-menu"></div></div>
+    
+    <div class="menu-button d-md-none">
+        <div id="bar-1" class="home-bar-bars"></div>
+        <div id="bar-2" class="home-bar-bars"></div>
+        <div id="bar-3" class="home-bar-bars"></div>
     </div>
     
-    <section class="hero">
-      <h1 class="title">Criamos Identidades Visuais Memoráveis</h1>
-      <p class="subtitle">Design estratégico para marcas que querem se destacar.</p>
-      <a href="#portfolio" class="button">Ver Portfólio</a>
-    </section>
-    
-    <section id="services" class="services">
-      <h2 class="title">Nossos Serviços</h2>
-      <div class="services-grid">
-          
-        <div class="service-card">
-          <h3>Branding</h3>
-          <p>Criação de identidade visual completa.</p>
-        </div>
-          
-        <div class="service-card">
-          <h3>Branding</h3>
-          <p>Criação de identidade visual completa.</p>
-        </div>
+    <section id="services" class="services">    <!-- Services Section -->
+      	<h2 class="title">Título dos Serviços</h2>
+		<h5 class="subtitle">subtitulo</h5>
 
+      	<div class="services-grid">  
+			<div class="service-card col">
+				<h3>Branding</h3>
+				<p>Criação de identidade visual completa.</p>
+				<hr class="linha">
+				<div><i class="fa-solid fa-chevron-down fa-xl"></i></div>
+			</div>
 
-        <!-- mostrar até 2 serviços, em baixo terá um botão para expandir e mostrar o restante, os serviços também são links para o catalogo em outra página -->
-      </div>
+			<div class="service-card col">
+				<h3>Design Gráfico</h3>
+				<p>Criação de peças gráficas como banners, flyers e cartões.</p>
+				<hr class="linha">
+				<div><i class="fa-solid fa-chevron-down fa-xl"></i></div>
+			</div>
+			
+			<div class="service-card col">
+				<h3>Landing Page</h3>
+				<p>Design de sites responsivos e modernos para seu negócio.</p>
+				<hr class="linha">
+				<div><i class="fa-solid fa-chevron-down fa-xl"></i></div>
+			</div>
+
+			<div class="service-card col">
+				<h3>Social Media</h3>
+				<p>Artes personalizadas para redes sociais.</p>
+				<hr class="linha">
+				<div><i class="fa-solid fa-chevron-down fa-xl"></i></div>
+			</div>
+      	</div>
     </section>
     
       <section id="portfolio" class="portfolio">
         <h2>Portfólio</h2>
         <div class="portfolio-grid">
           <div class="portfolio-item">
-            <img src="images/projeto1.jpg" alt="Projeto 1">
+            
             <div class="overlay">
               <h3>Loja Virtual</h3>
               <p>UI/UX Design</p>
@@ -91,10 +112,18 @@
     
       <footer>
         <div class="social-links">
-          <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
-          <a href="#"><img src="icons/behance.svg" alt="Behance"></a>
+            <a class="contato" href="mailto:sevdesign7@gmail.com" target="_blank"> 
+                <div class="fa-regular fa-envelope fa-xl"></div>
+            </a>
+            <a class="contato" href="https://www.instagram.com/_sevdesign_/" target="_blank"> 
+                <div class="fa-brands fa-instagram fa-xl"></div>
+            </a>
+            <a class="contato" href="https://wa.me/88994835808" target="_blank"> 
+                <div class="fa-brands fa-whatsapp fa-xl"></div>
+            </a>
         </div>
-        <p>&copy; 2023 Studio Design. Todos os direitos reservados.</p>
+
+        <p class="copyright">&copy; 2023 Studio Design. Todos os direitos reservados.</p>
       </footer>
 </body>
 </html>
