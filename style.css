@@ -269,41 +269,60 @@
       margin-bottom: 2rem;
     }
 
-    .button {
-      background: var(--primary);
-      color: var(--light-text);
-      margin-top: 2rem;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 30px;
-      display: inline-block;
-      transition: transform 0.5s, box-shadow 0.3s;
+    .form {
+      display: grid;
+      gap: 1rem;
     }
     
-    .button:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+    .input,
+    .textarea {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
     }
+    
+    .textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .button-container {
+      display: flex;
+
+      .button-whatsapp{
+        width: 20%;
+        background: #25D366;
+        color: var(--light-text);
+        text-decoration: none;
+        margin-right: 1rem;
+        text-align: center;
+        padding: 10px 20px;
+        border-radius: 30px;
+        border: 1px outset #333;
+        transition: transform 0.5s, box-shadow 0.3s;
+      }
+      
+      .button {
+        width: 80%;
+        background: var(--primary);
+        color: var(--light-text);
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px 20px;
+        border-radius: 30px;
+        transition: transform 0.5s, box-shadow 0.3s;
+      }
+      
+      .button:hover, .button-whatsapp:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+      }
+    }
+
   }
   
-  .contact form {
-    display: grid;
-    gap: 1rem;
-  }
-  
-  .contact input,
-  .contact textarea {
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: inherit;
-  }
-  
-  .contact textarea {
-    resize: vertical;
-    min-height: 150px;
-  }
   
 
   /* Footer */
