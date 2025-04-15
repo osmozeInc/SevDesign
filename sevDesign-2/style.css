@@ -305,18 +305,26 @@
     min-height: 150px;
   }
   
+
   /* Footer */
   footer {
-    text-align: center;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: var(--primary);
-    color: white;
-  }
-  
-  .social-links {
-    margin-bottom: 1rem;
-  }
-  
-  .social-links a {
-    margin: 0 0.5rem;
+    color: var(--light-text);
+    
+    .social-links {
+      padding: 1.5rem 1.5rem ;
+
+      .contato{
+        padding: 0 1.5rem;
+        color: var(--light-text);
+        text-decoration: none;
+      }
+    }
+
+    .copyright {
+      padding-bottom: 1.5rem;
+    }
   }
