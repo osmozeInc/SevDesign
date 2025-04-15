@@ -315,10 +315,10 @@
     color: var(--light-text);
     
     .social-links {
-      padding: 1.5rem 1.5rem ;
+      padding: 2rem 0 ;
 
       .contato{
-        padding: 0 1.5rem;
+        padding: 0 2rem;
         color: var(--light-text);
         text-decoration: none;
       }
