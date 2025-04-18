@@ -1,27 +1,3 @@
-/* transição de imagens do hero section */
-
-const imagens = [
-    'url("./imagens/fundo-1.png")',
-    'url("./imagens/fundo-2.png")',
-    'url("./imagens/fundo-3.png")'
-];
-
-const hero = document.querySelector('.hero');
-const dots = document.querySelectorAll('.dot');
-
-let index = 1;
-
-setInterval(() => {
-    hero.style.backgroundImage = imagens[index];        // muda a imagem de fundo
-
-    dots.forEach((dot, i) => {                          // muda a cor dos dots
-        dot.classList.toggle('active', i === index);
-    });
-
-    index = (index + 1) % imagens.length;               // incrementa o index
-}, 4000);
-
-
 
 /* BOTÃO DE MENU */
 
@@ -76,3 +52,30 @@ async function ShowSideMenu(){
         side_menu_check = false;
     }
 }
+
+
+
+
+/* transição de imagens do hero section */
+
+const imagens = [
+    'url("./imagens/fundo-1.png")',
+    'url("./imagens/fundo-2.png")',
+    'url("./imagens/fundo-3.png")'
+];
+
+const hero = document.querySelector('.hero');
+const dots = document.querySelectorAll('.dot');
+
+let index = 1;
+
+setInterval(() => {
+    hero.style.backgroundImage = imagens[index];        // muda a imagem de fundo
+
+    dots.forEach((dot, i) => {                          // muda a cor dos dots
+        dot.classList.toggle('active', i === index);
+    });
+
+    index = (index + 1) % imagens.length;               // incrementa o index
+}, 4000);
+
