@@ -79,3 +79,43 @@ setInterval(() => {
     index = (index + 1) % imagens.length;               // incrementa o index
 }, 4000);
 
+
+
+
+/* TRANSIÇÃO DE ITENS DO PORTFÓLIO */
+
+let port_item = 1;
+
+async function ChangePortItemToLeft(){
+    const item_atual = document.getElementById(`item-${port_item}`);
+    const prox_item = document.getElementById(`item-${port_item + 1}`)
+
+    item_atual.style.transitionDuration = '.5s'
+    prox_item.style.transitionDuration = '.5s'
+    item_atual.style.transform = `translateX(-100%)`
+    await new Promise(resolve => setTimeout(resolve, 500));
+    item_atual.style.display = 'none'
+    prox_item.style.display = 'flex'
+    await new Promise(resolve => setTimeout(resolve, 50));
+    prox_item.style.transform = `translate(0%)`
+        
+    
+
+}
+
+function ChangePortItemToRight(){
+    const item_atual = document.getElementById(`item-${port_item}`);
+
+    item_atual.style.transform = `translateX(100%)`
+    item_atual.style.transitionDuration = '1s'
+
+}
+
+const btn_left = document.querySelector('.fa-chevron-left');
+const btn_right = document.querySelector('.fa-chevron-right');
+
+
+btn_left.addEventListener('click', ChangePortItemToLeft)
+btn_right.addEventListener('click', ChangePortItemToRight)
+
+
