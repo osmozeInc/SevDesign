@@ -84,38 +84,89 @@ setInterval(() => {
 
 /* TRANSIÇÃO DE ITENS DO PORTFÓLIO */
 
-let port_item = 1;
+let num_item_atual = 1;  // numero do item atual
+const total_items = 3;  // total de items no carrossel
 
-async function ChangePortItemToLeft(){
-    const item_atual = document.getElementById(`item-${port_item}`);
-    const prox_item = document.getElementById(`item-${port_item + 1}`)
-
-    item_atual.style.transitionDuration = '.5s'
-    prox_item.style.transitionDuration = '.5s'
-    item_atual.style.transform = `translateX(-100%)`
-    await new Promise(resolve => setTimeout(resolve, 500));
-    item_atual.style.display = 'none'
-    prox_item.style.display = 'flex'
-    await new Promise(resolve => setTimeout(resolve, 50));
-    prox_item.style.transform = `translate(0%)`
-        
-    
-
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function ChangePortItemToRight(){
-    const item_atual = document.getElementById(`item-${port_item}`);
+function ChangeButton(){
+    const dots_port = document.querySelectorAll('.dot-port');
+    
+    dots_port.forEach((dot, i = 0) => {
+        const index = Number(dot.dataset.index); 
+        dot.classList.toggle('active', index == num_item_atual);
+    });
+}
 
-    item_atual.style.transform = `translateX(100%)`
-    item_atual.style.transitionDuration = '1s'
+async function ChangePortItemToLeft(num_item_seguinte){
+    if (num_item_atual == 1) return;
 
+    const item_atual = document.getElementById(`item-${num_item_atual}`);
+    const prox_item = document.getElementById(`item-${num_item_seguinte}`)
+
+    prox_item.style.transitionDuration = '.6s'
+
+    item_atual.style.transition = 'transform 0.4s ease-in';
+    item_atual.style.transform = 'translateX(100%)';
+
+    await sleep(400);
+    item_atual.style.display = 'none'
+
+    prox_item.style.display = 'flex'
+    await sleep(50);
+    prox_item.style.transition = `transform 0.5s ease-out`;
+    prox_item.style.transform = `translate(0%)`
+
+    num_item_atual--;
+    ChangeButton();
+}
+
+async function ChangePortItemToRight(num_item_seguinte){
+    if (num_item_atual == total_items) return;
+
+    const item_atual = document.getElementById(`item-${num_item_atual}`);
+    const prox_item = document.getElementById(`item-${num_item_seguinte}`)
+
+    prox_item.style.transitionDuration = '.6s'
+
+    item_atual.style.transition = 'transform 0.4s ease-in';
+    item_atual.style.transform = 'translateX(-100%)';
+
+    await sleep(400);
+    item_atual.style.display = 'none'
+
+    prox_item.style.display = 'flex'
+    await sleep(50);
+    prox_item.style.transition = `transform 0.5s ease-out`;
+    prox_item.style.transform = `translate(0%)`
+
+    num_item_atual++;
+    ChangeButton();
 }
 
 const btn_left = document.querySelector('.fa-chevron-left');
 const btn_right = document.querySelector('.fa-chevron-right');
 
+const container_item = document.querySelector('.container-item');
+const all_dots = document.querySelectorAll('.dot-port');
 
-btn_left.addEventListener('click', ChangePortItemToLeft)
-btn_right.addEventListener('click', ChangePortItemToRight)
+btn_left.addEventListener('click', () => ChangePortItemToLeft(num_item_atual - 1));
+btn_right.addEventListener('click', () => ChangePortItemToRight(num_item_atual + 1));
+
+
+all_dots.forEach((dot) => {
+    dot.addEventListener('click', async () => {
+        const index = Number(dot.dataset.index);    
+
+        if (index < num_item_atual) 
+            await ChangePortItemToLeft(index);
+        else if (index > num_item_atual) 
+            await ChangePortItemToRight(index);
+
+        ChangeButton();
+    });
+});
 
 

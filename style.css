@@ -259,6 +259,12 @@
           padding: 0 20px;
           color: var(--primary);
         }
+
+        @media screen and (max-width: 580px) {
+            .fa-solid{
+              display: none;
+            }
+        }
         
         .container-item {
           display: flex;
@@ -423,6 +429,11 @@
   }
 
   #item-2{
+    display: none;
+    transform: translateX(100%);
+  }
+
+  #item-3{
     display: none;
     transform: translateX(100%);
   }
