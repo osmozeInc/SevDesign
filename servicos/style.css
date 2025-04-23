@@ -94,7 +94,7 @@
   
     /* https://id7.com.br/marketing-digital/ */
 
-  .main-container{
+  .section-summary{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,9 +113,28 @@
     }
 
     .description{
-      display: flex;
-      margin: 1rem 2rem 2rem 1.5rem;
+      margin: 1rem 2rem 2rem 2rem;
       font-size: 1.2rem;
+      text-align: start;
+
+      .description-list{
+        text-align: start;
+        
+        .item-list{
+          opacity: 0;
+          transform: translateY(20px); /* Desloca para baixo */
+          animation: fadeIn 0.8s ease forwards;
+          padding-bottom: 1rem;
+          
+          .link{
+            text-decoration: none;
+            color: var(--text);
+            transform: translateY(20px); /* Desloca para baixo */
+            animation: fadeIn 0.8s ease forwards;
+  
+          }
+        }
+      } 
     }
   }
 
@@ -476,3 +495,21 @@
       padding-bottom: 1.5rem;
     }
   }
+
+
+
+
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+.item-list:nth-child(1) { animation-delay: 0.2s; }
+.item-list:nth-child(2) { animation-delay: 0.4s; }
+.item-list:nth-child(3) { animation-delay: 0.6s; }
+.item-list:nth-child(4) { animation-delay: 0.8s; }
+.item-list:nth-child(5) { animation-delay: 1.0s; }
+.item-list:nth-child(6) { animation-delay: 1.2s; }

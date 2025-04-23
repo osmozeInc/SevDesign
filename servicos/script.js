@@ -53,3 +53,12 @@ async function ShowSideMenu(){
     }
 }
 
+
+
+/* ANIMAÇÃO DA LISTA DE SUMARIO */
+
+const summary_item = document.querySelectorAll('.item-list');
+
+for (let i = 0; i < summary_item.length; i++) {
+    summary_item[i].style.animationDelay = i * 0.2 + 's';
+}
