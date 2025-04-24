@@ -183,7 +183,15 @@
   .services {
     padding: 4rem 5%;
     background: linear-gradient(0deg, var(--bg), var(--bg-ct), var(--bg-ct), var(--bg));
-        
+    
+    .title{
+        margin-bottom: 2rem;
+    }
+
+    .subtitle{
+        margin-bottom: 1rem;
+    }
+
     .services-grid {
       display: flex;
       justify-content: center;
