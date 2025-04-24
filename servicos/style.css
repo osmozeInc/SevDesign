@@ -1,15 +1,16 @@
 
 /* Variáveis CSS */
 :root {
-    --primary: #205891;
-    --secondary: #1c2538;
-    --bg: #eee;
-    --text: #333333;
-    --light-text: #F9F9F9;
+  --primary: #205891;
+  --secondary: #1c2538;
+  --bg: #f0f0f0;
+  --bg-ct: #d0d0d0;
+  --text: #333333;
+  --light-text: #F9F9F9;
 
-    --port-color-1-bg: rgb(0, 120, 46);
-    --port-color-1-ln: rgb(18, 158, 48);
-  }
+  --port-color-1-bg: rgb(0, 120, 46);
+  --port-color-1-ln: rgb(18, 158, 48);
+}
   
   /* Reset Básico */
   * {
@@ -17,12 +18,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
-  body {
-    background-color: var(--bg);
-  }
     
-  
 
   .header {
     display: flex;
@@ -92,15 +88,13 @@
   }
 
   
-    /* https://id7.com.br/marketing-digital/ */
-
   .section-summary{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding-top: 50px;
-    background-color: #ddd;
+    background-color: var(--bg-ct);
     
     .title{
       margin-top: 1rem;
@@ -143,22 +137,30 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 80px 0;
+    padding: 100px 0 0 0;
+    background-color: var(--bg);
+
 
     .celular{
       display: flex;
       justify-content: center;
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
       animation: fadeIn 2s ease forwards;
+      padding: 0 0 100px 0;
     }
 
     .text-midia{
       display: flex;
       flex-direction: column;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 2s ease forwards;
+      padding: 0 30px 100px 30px;
+
+      .container-tt{
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeIn 1s ease forwards;
+        animation-delay: .5s;
+      }
 
       .title{
         font-size: 2rem;
@@ -173,8 +175,134 @@
   }
 
 
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 4rem 8%;
+    background-color: var(--bg-ct);
+    
+    .title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      width: 100%;
+      
+      .input,
+      .textarea {
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+      }
+      
+      .textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+  
+      .button-container {
+        display: flex;
+  
+        .button-whatsapp{
+          width: 20%;
+          background: #25D366;
+          color: var(--light-text);
+          text-decoration: none;
+          margin-right: 1rem;
+          text-align: center;
+          padding: 10px 20px;
+          border-radius: 30px;
+          border: 1px outset #333;
+          transition: transform 0.5s, box-shadow 0.3s;
+        }
+  
+        .button {
+          width: 80%;
+          background: var(--primary);
+          color: var(--light-text);
+          text-decoration: none;
+          font-weight: bold;
+          text-align: center;
+          padding: 10px 20px;
+          border-radius: 30px;
+          transition: transform 0.5s, box-shadow 0.3s;
+        }
+  
+        .button:hover, .button-whatsapp:hover {
+          transform: translateY(-4px) scale(1.03);
+          box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+        }
+      }
+    }
+  }
 
 
+  .services {
+    padding: 3rem 5% 8rem 5%;
+    background-color: var(--bg);
+    
+    .title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-size: 2rem;
+    }
+    
+    .services-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 20px;
+      
+      .service-card {
+        min-width: 300px;
+        max-width: 100%;
+        background: white;
+        padding: 2rem 2rem 0rem 2rem;
+        margin: 0.8rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s;
+        text-decoration: none;
+        color: var(--text);
+
+        .title{
+          font-size: 1.8rem;
+          margin: 0 0 15px 0;
+        }
+  
+        .text{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1.5rem;
+          height: 4.5rem;
+        }
+  
+        .linha{
+          margin: 20px 0 0 0;
+        }
+
+        .fa-arrow-right{
+          padding: 20px 0;
+        }
+      }
+      
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
 
 
   /* Footer */
@@ -201,23 +329,9 @@
   }
 
 
-
-
-
 @keyframes fadeIn {
   to {
-      opacity: 1;
-      transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
-
-.item-list:nth-child(1) { animation-delay: 0.2s; }
-.item-list:nth-child(2) { animation-delay: 0.4s; }
-.item-list:nth-child(3) { animation-delay: 0.6s; }
-.item-list:nth-child(4) { animation-delay: 0.8s; }
-.item-list:nth-child(5) { animation-delay: 1.0s; }
-.item-list:nth-child(6) { animation-delay: 1.2s; }
-
-.text:nth-child(1) { animation-delay: 0.2s; }
-.text:nth-child(2) { animation-delay: 0.4s; }
-

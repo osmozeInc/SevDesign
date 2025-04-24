@@ -62,3 +62,11 @@ const summary_item = document.querySelectorAll('.item-list');
 for (let i = 0; i < summary_item.length; i++) {
     summary_item[i].style.animationDelay = i * 0.2 + 's';
 }
+
+/* ANIMAÇÃO DO TEXTO DA PÁGINA */
+
+const texts = document.querySelectorAll('.container-tt');
+
+for (let i = 0; i < texts.length; i++) {
+    texts[i].style.animationDelay = i * 0.5 + 's';
+}

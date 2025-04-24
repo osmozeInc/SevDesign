@@ -4,11 +4,14 @@
     --primary: #205891;
     --secondary: #1c2538;
     --bg: #eee;
+    --bg-ct: #ddd;
     --text: #333333;
     --light-text: #F9F9F9;
 
     --port-color-1-bg: rgb(0, 120, 46);
     --port-color-1-ln: rgb(18, 158, 48);
+    --port-color-2-bg: rgb(202, 144, 20);
+    --port-color-2-ln: rgb(224, 139, 11);
   }
   
   /* Reset Básico */
@@ -28,14 +31,14 @@
 
   .title {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     font-size: 2rem;
   }
 
   .subtitle {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
 
@@ -179,19 +182,8 @@
   /* Seção de Serviços */
   .services {
     padding: 4rem 5%;
-    
-    .title {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      font-size: 2rem;
-    }
-
-    .subtitle {
-      text-align: center;
-      margin-bottom: 3rem;
-      font-size: 1.4rem;
-    }
-    
+    background: linear-gradient(0deg, var(--bg), var(--bg-ct), var(--bg-ct), var(--bg));
+        
     .services-grid {
       display: flex;
       justify-content: center;
@@ -211,9 +203,17 @@
         text-decoration: none;
         color: var(--text);
 
-        p{
+        .title{
+          font-size: 1.8rem;
+          margin: 0 0 15px 0;
+        }
+
+        .text{
+          display: flex;
+          align-items: center;
+          justify-content: center;
           line-height: 1.5rem;
-          height: 3rem;
+          height: 4.5rem;
         }
 
         .linha{
@@ -238,13 +238,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 70px 0 100px 0;
-
-    .title {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      font-size: 2rem;
-    }
+    padding: 70px 15px 80px 15px;
+    background: linear-gradient(0deg, var(--bg), var(--bg-ct), var(--bg-ct), var(--bg));
 
     .container{
       display: flex;
@@ -283,7 +278,6 @@
             width: 100%;
             height: 100%;
             border-radius: 30px;
-            border: var(--port-color-1-ln) solid 2px;
   
             .text-part{
               display: flex;
@@ -322,8 +316,6 @@
                 font-size: larger;
                 font-weight: 600;
                 color: var(--light-text);
-                background: var(--port-color-1-bg);
-                border: var(--port-color-1-ln) solid 2px;
                 border-radius: 30px;
                 text-decoration: none;
               }
@@ -372,7 +364,6 @@
 
           .item-lg{
             flex-wrap: wrap;
-            background: linear-gradient(270deg, var(--port-color-1-bg), transparent );
             
             .item-subtitle{
               padding: 50px 0 0 0;
@@ -385,7 +376,6 @@
 
           .item-sm{
             flex-direction: column;
-            background: linear-gradient(180deg, var(--port-color-1-bg), transparent );
 
             .image-part{
               width: 100%;
@@ -406,6 +396,40 @@
               max-width: 100%;
               margin: 0 20px;
             }
+          }
+
+          .color-1{
+            border: var(--port-color-1-ln) solid 2px;
+
+            .button{
+              background: var(--port-color-1-bg);
+              border: var(--port-color-1-ln) solid 2px;
+            }
+          }
+
+          .color-2{
+            border: var(--port-color-2-ln) solid 2px;
+
+            .button{
+              background: var(--port-color-2-bg);
+              border: var(--port-color-2-ln) solid 2px;
+            }
+          }
+
+          .bg-lg-1{
+            background: linear-gradient(90deg, transparent, var(--port-color-1-bg));
+          }
+
+          .bg-lg-2{
+            background: linear-gradient(90deg, transparent, var(--port-color-2-bg));
+          }
+
+          .bg-sm-1{
+            background: linear-gradient(0deg, transparent, var(--port-color-1-bg));
+          }
+
+          .bg-sm-2{
+            background: linear-gradient(0deg, transparent, var(--port-color-2-bg));
           }
         }
       }
@@ -444,9 +468,13 @@
 
   /* Formulário de Contato */
   .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 4rem 8%;
-    max-width: 600px;
-    margin: 0 auto;
+    background: linear-gradient(0deg, var(--bg), var(--bg-ct), var(--bg-ct), var(--bg));
     
     .title {
       text-align: center;
@@ -454,54 +482,57 @@
     }
 
     .form {
-      display: grid;
-      gap: 1rem;
-    }
-    
-    .input,
-    .textarea {
-      padding: 0.8rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-family: inherit;
-    }
-    
-    .textarea {
-      resize: vertical;
-      min-height: 150px;
-    }
-
-    .button-container {
       display: flex;
-
-      .button-whatsapp{
-        width: 20%;
-        background: #25D366;
-        color: var(--light-text);
-        text-decoration: none;
-        margin-right: 1rem;
-        text-align: center;
-        padding: 10px 20px;
-        border-radius: 30px;
-        border: 1px outset #333;
-        transition: transform 0.5s, box-shadow 0.3s;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      width: 100%;
+      
+      .input,
+      .textarea {
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
       }
-
-      .button {
-        width: 80%;
-        background: var(--primary);
-        color: var(--light-text);
-        text-decoration: none;
-        font-weight: bold;
-        text-align: center;
-        padding: 10px 20px;
-        border-radius: 30px;
-        transition: transform 0.5s, box-shadow 0.3s;
+      
+      .textarea {
+        resize: vertical;
+        min-height: 150px;
       }
-
-      .button:hover, .button-whatsapp:hover {
-        transform: translateY(-4px) scale(1.03);
-        box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+  
+      .button-container {
+        display: flex;
+  
+        .button-whatsapp{
+          width: 20%;
+          background: #25D366;
+          color: var(--light-text);
+          text-decoration: none;
+          margin-right: 1rem;
+          text-align: center;
+          padding: 10px 20px;
+          border-radius: 30px;
+          border: 1px outset #333;
+          transition: transform 0.5s, box-shadow 0.3s;
+        }
+  
+        .button {
+          width: 80%;
+          background: var(--primary);
+          color: var(--light-text);
+          text-decoration: none;
+          font-weight: bold;
+          text-align: center;
+          padding: 10px 20px;
+          border-radius: 30px;
+          transition: transform 0.5s, box-shadow 0.3s;
+        }
+  
+        .button:hover, .button-whatsapp:hover {
+          transform: translateY(-4px) scale(1.03);
+          box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+        }
       }
     }
   }
