@@ -56,7 +56,7 @@ async function ShowSideMenu(){
 
 
 
-/* transição de imagens do hero section */
+/* TRANSIÇÃO DE IMAGENS DO HERO SECTION */
 
 const imagens = [
     'url("./imagens/fundo-1.png")',
@@ -170,3 +170,13 @@ all_dots.forEach((dot) => {
 });
 
 
+
+
+/* MASCARA DE TELEFONE */
+
+document.getElementById('telefone').addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g, '');
+    v = v.replace(/^(\d{2})(\d)/g, '($1) $2');
+    v = v.replace(/(\d{5})(\d)/, '$1-$2');
+    e.target.value = v;
+  });

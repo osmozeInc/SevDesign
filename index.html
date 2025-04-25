@@ -42,7 +42,9 @@
       </div>
     </section>
 
-    <div class="side-menu-container"><div class="side-menu"></div></div>
+    <div class="side-menu-container d-md-none">
+        <div class="side-menu"></div>
+    </div>
     
     <div class="menu-button d-md-none">
         <div id="bar-1" class="home-bar-bars"></div>
@@ -85,9 +87,10 @@
       	</div>
     </section>
     
+    
     <section id="portfolio" class="portfolio">
-        <h1 class="title">Nosso portifólio</h1>
         <h5 class="subtitle">Resultados reais para negócios que apostaram na nossa criatividade.</h5>
+        <h1 class="title">Nosso portifólio</h1>
 
         <div class="container">
             <div class="container-senction">
@@ -233,22 +236,71 @@
             </div>
         </div>
     </section>
-    
+
+    <section class="section-about">
+        <h1 class="title">Quem Somos</h1>
+
+        <div class="container">
+            <div class="content">
+                <div class="texts col-12 col-lg-6">
+                    <p class="highlight">Design que conecta, transforma e inspira.</p>
+                    <p class="text">Somos uma agência criativa especializada em redes sociais, identidade visual, design de interfaces e branding. Transformamos ideias em experiências visuais impactantes, com foco em estratégia e desenvolvimento.</p>
+                    <p class="text">Nossa equipe é formada por designers, estrategistas e criadores apaixonados por construir marcas que fazem a diferença no mundo.</p>
+                </div>
+
+                <div class="imagem">
+                <img class="img" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70" alt="Equipe criativa de design">
+                </div>
+            </div>
+        </div>
+    </section>
+ 
     <section id="contact" class="contact">
-        <h1 class="title">Contato</h1>
-        <form class="form">
-            <input class="input" type="text" placeholder="Nome" required>
-            <input class="input" type="email" placeholder="E-mail" required>
-            <textarea class="textarea" placeholder="Mensagem" required></textarea>
-            <div class="button-container">
+        <h1 class="title">Entre em contato</h1>
+        <h5 class="subtitle">(88) 9.9483-5808</h5>
+        <form class="form" action="https://formspree.io/f/mqaqkrwr" method="POST">
+            <input class="input" type="text" placeholder="Nome" name="name" required> <!-- nome -->
+
+            <div style="width: 100%; display: flex; gap: 20px; flex-wrap: wrap;">
+                <input class="input col" type="email" placeholder="E-mail" name="email" required> <!-- email -->
+                <input class="input col" type="tel" id="telefone" placeholder="Telefone" name="telefone" required> <!-- telefone -->
+            </div>
+
+            <div style="width: 100%; display: flex; gap: 20px; flex-wrap: wrap;">
+                <select class="input col" name="como_conheceu" required> <!-- Como conheceu? -->
+                    <option value="">Como nos conheceu?</option>
+                    <option value="redes_sociais">Redes Sociais</option>
+                    <option value="sites_de_busca">Sites de busca</option>
+                    <option value="indicacao_de_conhecidos">Indicação de conhecidos</option>
+                    <option value="ja_sou_cliente">Já sou cliente</option>
+                    <option value="outro">Outra forma</option>
+                </select>
+
+                <select class="input col" name="motivo_do_contato" required> <!-- Motivo do contato -->
+                    <option value="">Motivo do contato</option>
+                    <option value="solicitar_orcamento">Solicitar orçamento</option>
+                    <option value="landing_page">Landing Page</option>
+                    <option value="redes_sociais">Redes Sociais</option>
+                    <option value="branding">Branding</option>
+                    <option value="design_grafico">Design Gráfico</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            
+            <textarea class="textarea" placeholder="Mensagem" name="message" required></textarea> <!-- Descrição -->
+
+            <div class="button-container"> <!-- Botões -->
                 <a class="button-whatsapp" href="https://wa.me/5588994835808" target="_blank"> 
                     <div class="fa-brands fa-whatsapp fa-xl"></div>
                 </a>
                 <button type="submit" class="button">Enviar</button>
             </div>
         </form>
+        
     </section>
-    
+
+    <br><br><br>
+        
     <footer>
         <div class="social-links">
             <a class="contato" href="mailto:sevdesign7@gmail.com" target="_blank"> 
