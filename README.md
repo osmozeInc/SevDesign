@@ -1,2 +1,2 @@
-repositório ainda em desenvolviento
+repositório ainda em desenvolviento  
 logo haverá uma documentação aqui 
