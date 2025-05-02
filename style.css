@@ -180,7 +180,6 @@
       height: 100vh;
       background-size: cover;
       background-position: center;
-      z-index: -2;
       transition-duration: .6s;
     }
 
@@ -194,10 +193,6 @@
     
     .bg-3{
       background-image: url('./imagens/fundo-3.png');
-    }
-
-    .active{
-      z-index: -1;
     }
   }
 

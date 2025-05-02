@@ -4,6 +4,7 @@ function sleep(ms) {
 
 
 
+
 /* BOTÃO DE MENU */
 
 const menu_button = document.querySelector('.menu-button');
@@ -63,60 +64,24 @@ async function ShowSideMenu(){
 
 /* TRANSIÇÃO DE IMAGENS DO HERO SECTION */
 
-let index = 1;
+let index = 0;
+let in_out = true;
 
 function ShowText(){
-    const text1 = document.querySelector(`.text-1`);
-    const text2 = document.querySelector(`.text-2`);
-    const text3 = document.querySelector(`.text-3`);
-
-    function Text_1(){
-        text1.style.display = 'block';
-    }
-
-    function Text_2(){
-        text2.style.display = 'block';
-    }
-
-    function Text_3(){
-        text3.style.display = 'block';
-    }
-
-    if (index == 0) Text_1();
-    else if (index == 1) Text_2();
-    else if (index == 2) Text_3();
-
+    const texts = document.querySelectorAll('.text-1, .text-2, .text-3');
+    texts[(index + 1) % 3].style.display = 'block';
+    console.log('mostrando' + (index + 1));
 }
 
-async function ChangeText(){
-    const text1 = document.querySelector(`.text-1`);
-    const text2 = document.querySelector(`.text-2`);
-    const text3 = document.querySelector(`.text-3`);
+async function HideText(){
+    console.log('escondendo' + index);
+    const texts = document.querySelectorAll('.text-1, .text-2, .text-3');
+    
+    texts[index].style.opacity = 0;
+    await sleep(600);
 
-    async function Text_1(){
-        text3.style.opacity = 0;
-        await sleep(600);
-        text3.style.display = 'none';
-        text1.style.display = 'block';
-    }
-
-    async function Text_2(){
-        text1.style.opacity = 0;
-        await sleep(600);
-        text1.style.display = 'none';
-        text2.style.display = 'block';
-    }
-
-    async function Text_3(){
-        text2.style.opacity = 0;
-        await sleep(600);
-        text2.style.display = 'none';
-        text3.style.display = 'block';
-    }
-
-    if (index == 0) await Text_1();
-    else if (index == 1) await Text_2();
-    else if (index == 2) await Text_3();
+    texts[index].style.display = 'none';
+    texts[index].style.opacity = 1;
 }
 
 async function ChangeBackground(){
@@ -124,38 +89,37 @@ async function ChangeBackground(){
     const bg_2 = document.querySelector('.bg-2');
     const bg_3 = document.querySelector('.bg-3');
 
-    async function Bg_1(){
+    if (index == 2) {
+        HideText();
+        await sleep(600);
+
+        bg_3.style.transform = 'translatex(100%)';
+        bg_1.style.transform = 'translatex(0%)';
+        await sleep(600);
+
         bg_2.style.transform = 'translateX(0%)';
-        await sleep(600);
-
-        bg_3.style.transform = 'translatey(-100%)';
-        await sleep(600);
-
-        bg_1.classList.add('active');
-        bg_3.classList.remove('active');
-    }
-
-    async function Bg_2(){
         bg_3.style.transform = 'translateX(0%)';
+        ShowText();
+    }
+    
+    else if (index == 0) {
+        HideText();
+        await sleep(600);
+
         bg_1.style.transform = 'translateX(-100%)';
         await sleep(600);
-
-        bg_2.classList.add('active');
-        bg_1.classList.remove('active');
+        ShowText();
     }
-
-    async function Bg_3(){
-        bg_1.style.transform = 'translateX(0%)';
-        bg_2.style.transform = 'translateX(-100%)';
+    
+    else if (index == 1) {
+        HideText();
         await sleep(600);
 
-        bg_2.classList.remove('active');
-        bg_3.classList.add('active');
+        bg_2.style.transform = 'translateX(-100%)';
+        await sleep(600);
+        ShowText();
     }
-
-    if (index == 0) await Bg_1();
-    else if (index == 1) await Bg_2();
-    else if (index == 2) await Bg_3();
+    
 }
 
 function ChangeDots(){
@@ -167,16 +131,10 @@ function ChangeDots(){
 }
 
 async function ExecutarCiclo(){
-    await ChangeText();
-    await sleep(600);
+    await ChangeBackground();                           // muda a imagem de fundo
     
-    await ChangeBackground();                                 // muda a imagem de fundo
-    await ChangeDots();                                       // muda a cor dos dots
-
-    await sleep(600);
-    await ShowText();
-    
-    index = (index + 1) % 3;                            // incrementa o index
+    index = (index + 1) % 3;
+    ChangeDots();                                       // muda a cor dos dots
 }
 
 setInterval(ExecutarCiclo, 5000);
