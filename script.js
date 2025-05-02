@@ -1,3 +1,8 @@
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
 
 /* BOTÃO DE MENU */
 
@@ -58,26 +63,67 @@ async function ShowSideMenu(){
 
 /* TRANSIÇÃO DE IMAGENS DO HERO SECTION */
 
-const imagens = [
-    'url("./imagens/fundo-1.png")',
-    'url("./imagens/fundo-2.png")',
-    'url("./imagens/fundo-3.png")'
-];
-
-const hero = document.querySelector('.hero');
-const dots = document.querySelectorAll('.dot');
-
 let index = 1;
 
-setInterval(() => {
-    hero.style.backgroundImage = imagens[index];        // muda a imagem de fundo
+async function ChangeText(){
+    const text1 = document.querySelector(`.text-1`);
+    const text2 = document.querySelector(`.text-2`);
+    const text3 = document.querySelector(`.text-3`);
+
+    async function Text_1(){
+        text3.style.opacity = 0;
+        await sleep(600);
+        text3.style.display = 'none';
+
+        text1.style.display = 'block';
+    }
+
+    async function Text_2(){
+        text1.style.opacity = 0;
+        await sleep(600);
+        text1.style.display = 'none';
+        text2.style.display = 'flex';
+    }
+
+    if (index == 0) Text_1();
+    else if (index == 1) Text_2();
+    else if (index == 2) Bg_1();
+}
+
+async function ChangeBackground(){
+    const bg = document.getElementById('.background');
+
+    function Bg_1(){
+        
+    }
+
+    async function Bg_2(){
+    }
+
+    function Bg_3(){
+    }
+
+    if (index == 0) Bg_1();
+    else if (index == 1) Bg_2();
+    else if (index == 2) Bg_1();
+}
+
+function ChangeDots(){
+    const dots = document.querySelectorAll('.dot');
 
     dots.forEach((dot, i) => {                          // muda a cor dos dots
         dot.classList.toggle('active', i === index);
     });
+}
 
-    index = (index + 1) % imagens.length;               // incrementa o index
-}, 4000);
+setInterval(() => {
+    ChangeText();
+    ChangeBackground();                                 // muda a imagem de fundo
+
+    ChangeDots();                                       // muda a cor dos dots
+
+    index = (index + 1) % 3;                            // incrementa o index
+}, 5000);
 
 
 
@@ -86,10 +132,6 @@ setInterval(() => {
 
 let num_item_atual = 1;  // numero do item atual
 const total_items = 3;  // total de items no carrossel
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 function ChangeButton(){
     const dots_port = document.querySelectorAll('.dot-port');

@@ -47,11 +47,8 @@
   .hero {
     text-align: center;
     color: var(--light-text);
-    background-image: url('./imagens/fundo-1.png');
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
 
     .header {
       display: flex;
@@ -130,8 +127,58 @@
         background-color: white;
       }
     }
+
+    .text-container {
+      display: flex;
+      width: 100%;
+      height: 76vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text-1, .text-2, .text-3 {
+      position: absolute;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      animation: fadeIn 1.5s ease-in-out;
+      transition-duration: .6s;
+
+      .title{
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        padding: 1.5rem 3rem;
+        letter-spacing: .3rem;
+      }
+      
+      .subtitle{
+        margin-top: 0rem;
+        padding: 0 .5rem;
+        letter-spacing: 3px;
+      }
+    }
+
+    .bg-1, .bg-2, .bg-3{
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+
+    .bg-1{
+      background-image: url('./imagens/fundo-1.png');
+    }
+    
+    .bg-2{
+      background-image: url('./imagens/fundo-2.png');
+    }
+    
+    .bg-3{
+      background-image: url('./imagens/fundo-3.png');
+    }
   }
-  
+
 
   /* Menu Button */
 
@@ -639,7 +686,7 @@
   @keyframes fadeIn {
     0% {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(30px);
     }
     100% {
       opacity: 1;
