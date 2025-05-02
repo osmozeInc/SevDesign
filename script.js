@@ -65,6 +65,29 @@ async function ShowSideMenu(){
 
 let index = 1;
 
+function ShowText(){
+    const text1 = document.querySelector(`.text-1`);
+    const text2 = document.querySelector(`.text-2`);
+    const text3 = document.querySelector(`.text-3`);
+
+    function Text_1(){
+        text1.style.display = 'block';
+    }
+
+    function Text_2(){
+        text2.style.display = 'block';
+    }
+
+    function Text_3(){
+        text3.style.display = 'block';
+    }
+
+    if (index == 0) Text_1();
+    else if (index == 1) Text_2();
+    else if (index == 2) Text_3();
+
+}
+
 async function ChangeText(){
     const text1 = document.querySelector(`.text-1`);
     const text2 = document.querySelector(`.text-2`);
@@ -74,7 +97,6 @@ async function ChangeText(){
         text3.style.opacity = 0;
         await sleep(600);
         text3.style.display = 'none';
-
         text1.style.display = 'block';
     }
 
@@ -82,48 +104,82 @@ async function ChangeText(){
         text1.style.opacity = 0;
         await sleep(600);
         text1.style.display = 'none';
-        text2.style.display = 'flex';
+        text2.style.display = 'block';
     }
 
-    if (index == 0) Text_1();
-    else if (index == 1) Text_2();
-    else if (index == 2) Bg_1();
+    async function Text_3(){
+        text2.style.opacity = 0;
+        await sleep(600);
+        text2.style.display = 'none';
+        text3.style.display = 'block';
+    }
+
+    if (index == 0) await Text_1();
+    else if (index == 1) await Text_2();
+    else if (index == 2) await Text_3();
 }
 
 async function ChangeBackground(){
-    const bg = document.getElementById('.background');
+    const bg_1 = document.querySelector('.bg-1');
+    const bg_2 = document.querySelector('.bg-2');
+    const bg_3 = document.querySelector('.bg-3');
 
-    function Bg_1(){
-        
+    async function Bg_1(){
+        bg_2.style.transform = 'translateX(0%)';
+        await sleep(600);
+
+        bg_3.style.transform = 'translatey(-100%)';
+        await sleep(600);
+
+        bg_1.classList.add('active');
+        bg_3.classList.remove('active');
     }
 
     async function Bg_2(){
+        bg_3.style.transform = 'translateX(0%)';
+        bg_1.style.transform = 'translateX(-100%)';
+        await sleep(600);
+
+        bg_2.classList.add('active');
+        bg_1.classList.remove('active');
     }
 
-    function Bg_3(){
+    async function Bg_3(){
+        bg_1.style.transform = 'translateX(0%)';
+        bg_2.style.transform = 'translateX(-100%)';
+        await sleep(600);
+
+        bg_2.classList.remove('active');
+        bg_3.classList.add('active');
     }
 
-    if (index == 0) Bg_1();
-    else if (index == 1) Bg_2();
-    else if (index == 2) Bg_1();
+    if (index == 0) await Bg_1();
+    else if (index == 1) await Bg_2();
+    else if (index == 2) await Bg_3();
 }
 
 function ChangeDots(){
     const dots = document.querySelectorAll('.dot');
 
-    dots.forEach((dot, i) => {                          // muda a cor dos dots
+    dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
     });
 }
 
-setInterval(() => {
-    ChangeText();
-    ChangeBackground();                                 // muda a imagem de fundo
+async function ExecutarCiclo(){
+    await ChangeText();
+    await sleep(600);
+    
+    await ChangeBackground();                                 // muda a imagem de fundo
+    await ChangeDots();                                       // muda a cor dos dots
 
-    ChangeDots();                                       // muda a cor dos dots
-
+    await sleep(600);
+    await ShowText();
+    
     index = (index + 1) % 3;                            // incrementa o index
-}, 5000);
+}
+
+setInterval(ExecutarCiclo, 5000);
 
 
 

@@ -134,28 +134,45 @@
       height: 76vh;
       justify-content: center;
       align-items: center;
+
+      .text-1, .text-2, .text-3 {
+        position: absolute;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        animation: fadeIn 1.5s ease-in-out;
+        transition-duration: .6s;
+  
+        .title{
+          font-weight: bold;
+          text-align: center;
+          margin: 0;
+          padding: 0 3rem;
+          letter-spacing: .3rem;
+        }
+        
+        .subtitle{
+          margin-top: 0rem;
+          padding: 1.5rem .5rem;
+          letter-spacing: 3px;
+        }
+  
+        .button{
+          margin-top: 2rem;
+          padding: .6rem 2rem;
+          font-size: larger;
+          font-weight: 600;
+          color: var(--light-text);
+          background-color: var(--primary);
+          border-radius: 30px;
+          text-decoration: none;
+        }
+  
+      }
+
+      .text-2, .text-3 {
+        display: none;
+      }
     }
 
-    .text-1, .text-2, .text-3 {
-      position: absolute;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      animation: fadeIn 1.5s ease-in-out;
-      transition-duration: .6s;
-
-      .title{
-        font-weight: bold;
-        text-align: center;
-        margin: 0;
-        padding: 1.5rem 3rem;
-        letter-spacing: .3rem;
-      }
-      
-      .subtitle{
-        margin-top: 0rem;
-        padding: 0 .5rem;
-        letter-spacing: 3px;
-      }
-    }
 
     .bg-1, .bg-2, .bg-3{
       position: absolute;
@@ -163,7 +180,8 @@
       height: 100vh;
       background-size: cover;
       background-position: center;
-      z-index: -1;
+      z-index: -2;
+      transition-duration: .6s;
     }
 
     .bg-1{
@@ -176,6 +194,10 @@
     
     .bg-3{
       background-image: url('./imagens/fundo-3.png');
+    }
+
+    .active{
+      z-index: -1;
     }
   }
 
