@@ -65,10 +65,12 @@ function sleep(ms) {
 
 /* DROPDOWN DOS SERVIÇOS */
 {
-    const dropdown = document.querySelector('.dropdown');
-    
-    dropdown.addEventListener('click', () => {
+    const button = document.getElementById('services-dropdown');
+    const dropdown = document.querySelector('.dropdown-container');
+
+    button.addEventListener('click', () => {
         dropdown.classList.toggle('active');
+        console.log('clicou');
     });
 }
 
@@ -146,7 +148,7 @@ function sleep(ms) {
         ChangeDots();                                       // muda a cor dos dots
     }
 
-    setInterval(ExecutarCiclo, 8000);
+    setInterval(ExecutarCiclo, 4000);
 }
 
 
