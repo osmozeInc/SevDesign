@@ -47,6 +47,7 @@ async function ShowSideMenu(){
     const side_menu = document.querySelector('.side-menu');
     
     if (side_menu_check === false) {
+        side_menu.style.pointerEvents = 'auto';
         side_menu_container.style.display = 'block';
         side_menu.style.transform = 'translateX(0vh)';
         side_menu_check = true;
@@ -55,6 +56,7 @@ async function ShowSideMenu(){
         side_menu.style.transform = 'translateX(35vh)';
         await new Promise(resolve => setTimeout(resolve, 500));
         side_menu_container.style.display = 'none';
+        side_menu.style.pointerEvents = 'none';
         side_menu_check = false;
     }
 }
@@ -137,7 +139,7 @@ async function ExecutarCiclo(){
     ChangeDots();                                       // muda a cor dos dots
 }
 
-setInterval(ExecutarCiclo, 5000);
+setInterval(ExecutarCiclo, 4000);
 
 
 
