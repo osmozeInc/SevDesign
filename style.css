@@ -4,7 +4,7 @@
     --primary: #205891;
     --secondary: #1c2538;
     --bg: #fff;
-    --bg-ct: #ddd;
+    --bg-ct: #dddde5;
     --text: #333333;
     --light-text: #F9F9F9;
 
@@ -594,7 +594,7 @@
   /* Seção Sobre */
   .section-about {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #ffffff 50%, #f8f8f8 50%);
+    background: linear-gradient(135deg, #ffffff 50%, #f0f0f0 50%);
     
     .container {
       max-width: 1200px;
@@ -681,6 +681,8 @@
         border: 1px solid #ddd;
         border-radius: 4px;
         font-family: inherit;
+        min-height: 50px;
+        color: var(--text);
       }
       
       .textarea {

@@ -10,17 +10,17 @@ function sleep(ms) {
     const menu_button = document.querySelector('.menu-button');
     let side_menu_check = false;
 
-    menu_button.addEventListener('click', () => {    // chama as funções de menu quando o botão é clicado
-        AnimateBar();
-        ShowSideMenu();    
+    menu_button.addEventListener('click', () => {   // chama as funções de menu quando o botão é clicado
+        AnimateBar();                               // animação das opções na barra de opções
+        ShowSideMenu();                             // mostra ou esconde o menu lateral
     });
 
-    function AnimateBar(){          // animação das opções na barra de opções
+    function AnimateBar(){
         if (side_menu_check === false) {
             menu_button.style.right = '1vh';
-            menu_button.style.top = '3vh';
+            menu_button.style.top = '3vh';      // move o botão para o canto superior direito 
 
-            for (let i = 1; i <= 3; i++){
+            for (let i = 1; i <= 3; i++){       // anima as linhas da barra formando um 'X'
                 const bar = document.getElementById(`bar-${i}`);
                 if (i === 1)
                     bar.style.transform = `translateY(1vh) rotate(45deg)`;
@@ -32,9 +32,9 @@ function sleep(ms) {
         }
         else {
             menu_button.style.right = '3vh';
-            menu_button.style.top = '10vh';
+            menu_button.style.top = '10vh';     // move o botão para a posição inicial
 
-            for (let i = 1; i <= 3; i++){
+            for (let i = 1; i <= 3; i++){       // anima as linhas da barra para a posição inicial
                 const bar = document.getElementById(`bar-${i}`);
                 bar.style.opacity = 1;
                 bar.style.transform = `translate(0px, 0px) rotate(0deg)`;
@@ -47,6 +47,7 @@ function sleep(ms) {
         const side_menu = document.querySelector('.side-menu');
         
         if (side_menu_check === false) {
+            side_menu.style.transitionDuration = '.5s';
             side_menu.style.pointerEvents = 'auto';
             side_menu_container.style.display = 'block';
             side_menu.style.transform = 'translateX(0vh)';
