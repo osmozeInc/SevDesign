@@ -69,9 +69,11 @@ function sleep(ms) {
     const button = document.getElementById('services-dropdown');
     const dropdown = document.querySelector('.dropdown-container');
 
-    button.addEventListener('click', () => {
-        dropdown.classList.toggle('active');
-        console.log('clicou');
+    ['click', 'mouseenter', 'mouseleave'].forEach(event => {
+        button.addEventListener(event, () => {
+            dropdown.classList.toggle('active');
+            console.log("oi");
+        });
     });
 }
 

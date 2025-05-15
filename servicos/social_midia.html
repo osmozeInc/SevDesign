@@ -15,17 +15,67 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="brand-name">
-            <a href="../index.html">
-                <img src="../imagens/banner.png" class="logo" alt="Logo">
+    <section>
+        <div class="header">
+            <a class="brand-name" href="../index.html">
+                <img src="../imagens/logo.png" class="logo" alt="Logo">
             </a>
+            
+            <div class="nav-large d-md-block d-none">
+                <a id="services-dropdown" href="#" class="link">Serviços</a>
+                <a href="./paginas_principais/about.html" class="link">Sobre nós</a>
+                <a href="./paginas_principais/contact.html" class="link">Contato</a>
+            </div>
+            
+            <div class="link-orcamento">
+                <a href="#contact" class="button">Orçamento</a>
+            </div>
         </div>
-    </header>
+        
+        <div class="dropdown-container">
+            <div class="dropdown-box"></div>
+            <div class="dropdown-arrow"></div>
+            <div class="dropdown-links">
+                <a href="./servicos/branding.html" class="link-section">Branding</a>
+                <a href="./servicos/social_midia.html" class="link-section">Social Midia</a>
+                <a href="./servicos/design_grafico.html" class="link-section">Design Grafico</a>
+                <a href="./servicos/landing_page.html" class="link-section">Landing Page</a>
+            </div>
+        </div>
+    </section>
 
 
-    <div class="side-menu-container"><div class="side-menu"></div></div>
-    
+    <div class="side-menu-container d-md-none">
+        <div class="side-menu">
+            <a href="./index.html" class="link">Página inicial</a>
+            <hr class="line">
+
+            <a href="#" class="link">Serviços</a>
+            <hr class="line">
+
+            <ul class="list">
+                <li class="item-list">
+                    <a href="./servicos/branding.html" class="link">Branding</a>
+                </li>
+                <li class="item-list">
+                    <a href="./servicos/landing_page.html" class="link">Landing Page</a>
+                </li>
+                <li class="item-list">
+                    <a href="./servicos/design_grafico.html" class="link">Design Grafico</a>
+                </li>
+                <li class="item-list">
+                    <a href="./servicos/social_midia.html" class="link">Social Midia</a>
+                </li>
+            </ul>
+
+            <a href="#about" class="link">Sobre nós</a>
+            <hr class="line">
+
+            <a href="#contact" class="link">Contato</a>
+            <hr class="line">
+        </div>
+    </div>
+
     <div class="menu-button d-md-none">
         <div id="bar-1" class="home-bar-bars"></div>
         <div id="bar-2" class="home-bar-bars"></div>
@@ -57,56 +107,89 @@
 
     <section class="section-midia">
         <div class="celular col-12 col-lg-6">
-            <img class="img-celular" src="../imagens/celular2.png" alt="">
-
+            <img class="img" src="../imagens/celular.png" alt="">
         </div>
 
         <div class="text-midia col-12 col-lg-5">
             <div class="container-tt">
                 <h1 class="title">
-                    Campanhas e Peças para Redes Sociais
+                    Gestão Criativa para Redes Sociais
                 </h1>
                 
                 <p class="text">
-                    (Facebook, Instagram, Twitter e Linked In)
-                    Atualizar constantemente os conteúdos de suas redes sociais é muito importante para mostrar novidades ao seu público e mostrar as atividades da empresa.
+                    Na era digital, marcar presença nas redes sociais é 
+                    essencial para consolidar sua marca e criar conexão
+                    com o público. 
                     <br>
-                    Este contato com o cliente é fundamental para estabelecer uma conexão com o seu público-alvo.
-                    <br>
-                    O ID7 Studio oferece a criação de posts e campanhas para as suas mídias sociais.
+                    A SevDesign desenvolve campanhas estratégicas e peças visuais
+                    personalizadas para plataformas como Instagram, Facebook,
+                    LinkedIn e X (antigo Twitter), garantindo uma comunicação atual,
+                    criativa e alinhada com a identidade da sua empresa.
                 </p>
             </div>
 
             <div class="container-tt">
                 <h1 class="title">
-                    Campanhas de E-mail Marketing
+                    Planos Pensados para o Seu Negócio
                 </h1>
                 
                 <p class="text">
-                    Além das principais atividades de marketing o ID7 oferece também a criação de peças e a realização de campanhas de e-mail marketing.
+                    Além dos serviços personalizados de social mídia, a
+                    SevDesign também possui planos especificos para cada tipo
+                    de negócio, alinhados ao seu nicho, tamanho ou objetivo.
                     <br>
-                    Temos a solução completa para a sua empresa começar com tudo o que for é necessário, ou tudo aquilo que você precisa para alavancar a empresa que já possui.
-                    <br>
-                    Converse com o ID7 Studio.
+                    Disponibilizamos soluções completas, seja para empresas
+                    que estão iniciando sua jornada digital ou para aquelas
+                    que desejam impulsionar seus resultados.
+                    Fale com a SevDesign e descubra como podemos transformar
+                    sua comunicação.
                 </p>
             </div>
-        </div>
     </section>
 
 
     <section id="contact" class="contact">
-        <h1 class="title">Contato</h1>
-        <form class="form">
-            <input class="input" type="text" placeholder="Nome" required>
-            <input class="input" type="email" placeholder="E-mail" required>
-            <textarea class="textarea" placeholder="Mensagem" required></textarea>
-            <div class="button-container">
+        <h1 class="title">Entre em contato</h1>
+        <h5 class="subtitle">(88) 9.9483-5808</h5>
+        <form class="form" action="https://formspree.io/f/xldbdqdn" method="POST">
+            <input class="input" type="text" placeholder="Nome" name="name" required> <!-- nome -->
+
+            <div style="width: 100%; display: flex; gap: 20px; flex-wrap: wrap;">
+                <input class="input col" type="email" placeholder="E-mail" name="email" required> <!-- email -->
+                <input class="input col" type="tel" id="telefone" placeholder="Telefone" name="telefone" required> <!-- telefone -->
+            </div>
+
+            <div style="width: 100%; display: flex; gap: 20px; flex-wrap: wrap;">
+                <select class="input col" name="como_conheceu" required> <!-- Como conheceu? -->
+                    <option value="">Como nos conheceu?</option>
+                    <option value="redes_sociais">Redes Sociais</option>
+                    <option value="sites_de_busca">Sites de busca</option>
+                    <option value="indicacao_de_conhecidos">Indicação de conhecidos</option>
+                    <option value="ja_sou_cliente">Já sou cliente</option>
+                    <option value="outro">Outra forma</option>
+                </select>
+
+                <select class="input col" name="motivo_do_contato" required> <!-- Motivo do contato -->
+                    <option value="">Motivo do contato</option>
+                    <option value="solicitar_orcamento">Solicitar orçamento</option>
+                    <option value="landing_page">Landing Page</option>
+                    <option value="redes_sociais">Redes Sociais</option>
+                    <option value="branding">Branding</option>
+                    <option value="design_grafico">Design Gráfico</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            
+            <textarea class="textarea" placeholder="Mensagem" name="message" required></textarea> <!-- Descrição -->
+
+            <div class="button-container"> <!-- Botões -->
                 <a class="button-whatsapp" href="https://wa.me/5588994835808" target="_blank"> 
                     <div class="fa-brands fa-whatsapp fa-xl"></div>
                 </a>
                 <button type="submit" class="button">Enviar</button>
             </div>
         </form>
+        
     </section>
 
 
@@ -114,21 +197,21 @@
         <h1 class="title">Explore nossas outras especialidades</h1>
 
         <div class="services-container">  
-			<a class="service-card col">
+			<a class="service-card col" href="./branding.html">
 				<h3 class="title">Branding</h3>
 				<p class="text">Logo, cores, fontes e mais. <br>Criação de identidade visual completa da sua marca. </p>
 				<hr class="linha">
 				<div><i class="fa-solid fa-arrow-right fa-xl"></i></div>
 			</a>
 
-			<a class="service-card col">
+			<a class="service-card col" href="./design_grafico.html">
 				<h3 class="title">Design Gráfico</h3>
 				<p class="text">Criação de peças gráficas como banners, planfetos e cartões.</p>
 				<hr class="linha">
 				<div><i class="fa-solid fa-arrow-right fa-xl"></i></div>
 			</a>
 			
-			<a class="service-card col">
+			<a class="service-card col" href="./landing_page.html">
 				<h3 class="title">Landing Page</h3>
 				<p class="text">Design de sites responsivos e modernos para seu negócio. <br> Exiba sua marca para todos!</p>
 				<hr class="linha">
