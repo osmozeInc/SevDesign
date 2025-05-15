@@ -149,7 +149,7 @@ function sleep(ms) {
         ChangeDots();                                       // muda a cor dos dots
     }
 
-    setInterval(ExecutarCiclo, 4000);
+    setInterval(ExecutarCiclo, 10000);
 }
 
 
